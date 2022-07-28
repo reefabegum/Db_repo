@@ -4,8 +4,8 @@ resource "aws_db_instance" "mysql_db" {
   engine_version       = "8.0"
   instance_class       = "db.t3.micro"
   db_name              = "movies_db"
-  username             = "reefa"
-  password             = "reefa$27"
+  username             = "reefabegum"
+  password             = "reefabegum"
   skip_final_snapshot  = true
   multi_az = true
   db_subnet_group_name = aws_db_subnet_group.mysql_db_subnet_grp.name
@@ -15,13 +15,12 @@ resource "aws_db_instance" "mysql_db" {
 
 resource "aws_db_subnet_group" "mysql_db_subnet_grp" {
   name       = "mysql-db-grp"
-  subnet_ids = [
-    data.aws_subnet.data_a.id,
-    data.aws_subnet.data_b.id
-  ]
+  subnet_ids = [data.aws_subnet.data_a.id, data.aws_subnet.data_b.id]
+   
+
 
   tags = {
-    Name = "MySQL DB subnet group"
+    Name = "mysql-db-grp"
   }
 }
 # resource "aws_db_instance" "default" {

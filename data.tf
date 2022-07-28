@@ -18,9 +18,9 @@ data "aws_subnet" "data_b" {
   }
 }
 
-data "aws_security_group" "ec2_server" {
-  filter {
-    name   = "tag:Name"
-    values = ["ansible-server"]
-  }
-}
+# data "aws_security_group" "ec2_server" {
+#   filter {
+#     name   = "tag:Name"
+#     values = ["ansible_server"]
+#   }
+# }
